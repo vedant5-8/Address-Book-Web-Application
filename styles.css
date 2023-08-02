@@ -52,7 +52,7 @@ button {
     background-color: #fff;
     border-radius: 0.6rem;
     overflow: hidden;
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 2rem;
     left: 50%;
@@ -155,4 +155,123 @@ button {
 
 #delete-btn:hover {
     box-shadow: 0 1px 0 0 #8a1f23;
+}
+
+/* address list */
+
+.addr-book {
+    padding: 1.4rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 700px!important;
+}
+
+.addr-book-content {
+    background-color: #fff;
+    padding: 1.6rem;
+    border-radius: 4px; 
+}
+
+.addr-book-head {
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addr-book-head h2 {
+    font-size: 2.2rem;
+}
+
+.addr-book-head i {
+    color: var(--orange-color);
+    margin-right: 1rem;
+}
+
+.addr-book-top {
+    padding: 1rem 0;
+}
+
+.addr-book-top .btn {
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 3px;
+    transition: all 200ms ease;
+    background-color: var(--orange-color);
+    box-shadow: 0 2px 0 0 #bd5305;
+}
+
+.addr-book-top .btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 0 #bd5305;
+}
+
+.addr-book-list {
+    margin: 1rem 0;
+    min-height: 450px;
+}
+
+.addr-table {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.addr-table thead {
+    border-bottom: 1px solid #e3e4f1;
+}
+
+.addr-table tHead tr th {
+    padding-bottom: 0.8rem;
+}
+
+.addr-table tbody td {
+    padding: 1.5rem 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+}
+
+.addr-table tbody td:nth-child(1) {
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+}
+
+.addr-table tbody td:nth-child(2) {
+    font-weight: 800;
+}
+
+.addr-table .addressing-name {
+    color: var(--dark-blue);
+}
+
+.addr-table .address {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.addr-table tbody td:nth-child(3) span{
+    background-color: var(--light-grey-color);
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+}
+
+.addr-table tbody tr {
+    cursor: pointer;
+}
+
+.addr-table tbody tr:hover {
+    background-color: var(--orange-color);
+    transition: all 200ms ease;
+}
+
+.addr-table tbody tr:hover td, .addr-table tbody tr:hover span {
+    color: #fff;
+}
+
+.addr-table tbody tr:hover td:nth-child(3) span {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.6);
 }

@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <!-- Starting of Form Modal -->
+    <!-- Address Book Form Modal -->
     
     <div id="fullscreen-div"></div>
     <form action="" class="modal">
@@ -90,7 +90,68 @@
         </div>
     </form>
 
-    <!-- end of Form Modal -->
+    <!-- end of Address Book Form Modal -->
+
+    <!-- Address Book Home -->
+
+    <div class="addr-book" id="addr-book">
+        <div class="addr-book-content">
+            <div class="addr-book-head">
+                <i class="fa-solid fa-address-book fa-2x"></i>
+                <h2>Address<span>Book</span></h2>
+            </div>
+
+            <div class="addr-book-top">
+                <button type="button" class="btn" id = "add-btn">
+                    <span><i class="fas fa-plus"></i>Add Address</span>
+                </button>
+            </div>
+
+            <div class="addr-book-list" id="addr-book-list">
+                <table class="addr-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Address</th>
+                            <th>Labels</th>
+                            <th>By Name</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <span class="addressing-name">Patil Family</span><br>
+                                <span class="address">Johnson Street-86547, Lake Side</span>
+                            </td>
+                            <td>
+                                <span>Colleagues</span>
+                            </td>
+                            <td>Vedant Patil</td>
+                            <td>+918390386312</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <span class="addressing-name">Patil Family</span><br>
+                                <span class="address">Johnson Street-86547, Lake Side</span>
+                            </td>
+                            <td>
+                                <span>Colleagues</span>
+                            </td>
+                            <td>Vedant Patil</td>
+                            <td>+918390386312</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- end of Address Book Home -->
 
     <script src="app.js"></script>
 </body>
