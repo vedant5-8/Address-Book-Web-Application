@@ -4,15 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Address-Book</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
     crossorigin="anonymous" 
     referrerpolicy="no-referrer"/>
 </head>
 <body>
+
+    <!-- Starting of Form Modal -->
     
-    
+    <div id="fullscreen-div"></div>
+    <form action="" class="modal">
+        <div class="modal-content">
+            <div class="modal-head">
+                <h3 id="model-title">Add Address</h3>
+                <button type="button" id="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-main">
+
+                <div class="modal-row grid-row">
+                    <div class="modal-col">
+                        <label for="">First Name</label>
+                        <input type="text" name="first_name" class="form-control" id="" placeholder="Enter your first name...">
+                    </div>
+                    <div class="modal-col">
+                        <label for="">Last Name</label>
+                        <input type="text" name="last_name" class="form-control" id="" placeholder="Enter your last name...">
+                    </div>
+                </div>
+
+                <div class="modal-row grid-row">
+                    <div class="modal-col">
+                        <label for="">Email</label>
+                        <input type="email" name="email" class="form-control" id="" placeholder="Enter your email...">
+                    </div>
+                    <div class="modal-col">
+                        <label for="">Phone</label>
+                        <input type="text" name="phone" class="form-control" id="" placeholder="Enter your phone...">
+                    </div>
+                </div>
+
+                <div class="modal-row grid-row">
+                    <div class="modal-col">
+                        <label for="">Street Address</label>
+                        <input type="text" name="street_addr" class="form-control" id="" placeholder="street address, apartment, house number, etc.">
+                    </div>
+                    <div class="modal-col">
+                        <label for="">Postal Code</label>
+                        <input type="text" name="postal_code" class="form-control" id="" placeholder="Enter your postal code...">
+                    </div>
+                </div>
+                
+                <div class="modal-row grid-row">
+                    <div class="modal-col">
+                        <label for="">City</label>
+                        <input type="text" name="city" class="form-control" id="" placeholder="Enter your city...">
+                    </div>
+                    <div class="modal-col">
+                        <label for="">State</label>
+                        <select name="state" id="state-list">
+                            <option value="">Maharashtra</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-row">
+                    <div class="modal-col">
+                        <label for="">Labels</label>
+                        <select name="labels" id="">
+                            <option value="">Family</option>
+                            <option value="">Friends</option>
+                            <option value="">Colleagues</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-row" id="modal-btns">
+                    <button type="submit" id="save-btn">Save</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <!-- end of Form Modal -->
 
     <script src="app.js"></script>
 </body>
