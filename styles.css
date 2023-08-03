@@ -58,6 +58,7 @@ button {
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 5;
 }
 
 .modal-head {
@@ -274,4 +275,10 @@ button {
 .addr-table tbody tr:hover td:nth-child(3) span {
     background-color: #fff;
     color: rgba(0, 0, 0, 0.6);
+}
+
+/* for error messages */
+
+.errorMsg {
+    border: 1px solid #d33c41!important;
 }

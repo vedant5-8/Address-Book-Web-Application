@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Address-Book</title>
     <link rel="stylesheet" href="styles.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
     crossorigin="anonymous" 
@@ -15,13 +16,11 @@
     <!-- Address Book Form Modal -->
     
     <div id="fullscreen-div"></div>
-    <form action="" class="modal">
+    <form action="" class="modal" id="modal">
         <div class="modal-content">
             <div class="modal-head">
-                <h3 id="model-title">Add Address</h3>
-                <button type="button" id="close-btn">
-                    <i class="fas fa-times"></i>
-                </button>
+                <h3 id="modal-title">Add Address</h3>
+                <button type="button" id="close-btn" title="Close"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-main">
 
@@ -64,20 +63,20 @@
                         <input type="text" name="city" class="form-control" id="" placeholder="Enter your city...">
                     </div>
                     <div class="modal-col">
-                        <label for="">State</label>
+                        <label for="state-list">State</label>
                         <select name="state" id="state-list">
-                            <option value="">Maharashtra</option>
+                            
                         </select>
                     </div>
                 </div>
 
                 <div class="modal-row">
                     <div class="modal-col">
-                        <label for="">Labels</label>
-                        <select name="labels" id="">
-                            <option value="">Family</option>
-                            <option value="">Friends</option>
-                            <option value="">Colleagues</option>
+                        <label for="labels">Labels</label>
+                        <select name="labels" id="labels">
+                            <option value="Family">Family</option>
+                            <option value="Friends">Friends</option>
+                            <option value="Colleagues">Colleagues</option>
                         </select>
                     </div>
                 </div>
@@ -102,7 +101,7 @@
             </div>
 
             <div class="addr-book-top">
-                <button type="button" class="btn" id = "add-btn">
+                <button type="button" class="btn" id="add-btn">
                     <span><i class="fas fa-plus"></i>Add Address</span>
                 </button>
             </div>

@@ -1,0 +1,146 @@
+[
+    {
+        "state": "Andaman and Nicobar Islands",
+        "abbreviation": "AN"
+    },
+    {
+        "state": "Andhra Pradesh",
+        "abbreviation": "AP"
+    },
+    {
+        "state": "Arunachal Pradesh",
+        "abbreviation": "AR"
+    },
+    {
+        "state": "Assam",
+        "abbreviation": "AS"
+    },
+    {
+        "state": "Bihar",
+        "abbreviation": "BR"
+    },
+    {
+        "state": "Chandigarh",
+        "abbreviation": "CH"
+    },
+    {
+        "state": "Chhattisgarh",
+        "abbreviation": "CT"
+    },
+    {
+        "state": "Dadra and Nagar Haveli",
+        "abbreviation": "DN"
+    },
+    {
+        "state": "Daman and Diu",
+        "abbreviation": "DD"
+    },
+    {
+        "state": "Delhi",
+        "abbreviation": "DL"
+    },
+    {
+        "state": "Goa",
+        "abbreviation": "GA"
+    },
+    {
+        "state": "Gujarat",
+        "abbreviation": "GJ"
+    },
+    {
+        "state": "Haryana",
+        "abbreviation": "HR"
+    },
+    {
+        "state": "Himachal Pradesh",
+        "abbreviation": "HP"
+    },
+    {
+        "state": "Jammu and Kashmir",
+        "abbreviation": "JK"
+    },
+    {
+        "state": "Jharkhand",
+        "abbreviation": "JH"
+    },
+    {
+        "state": "Karnataka",
+        "abbreviation": "KA"
+    },
+    {
+        "state": "Kerala",
+        "abbreviation": "KL"
+    },
+    {
+        "state": "Lakshadweep",
+        "abbreviation": "LD"
+    },
+    {
+        "state": "Madhya Pradesh",
+        "abbreviation": "MP"
+    },
+    {
+        "state": "Maharashtra",
+        "abbreviation": "MH"
+    },
+    {
+        "state": "Manipur",
+        "abbreviation": "MN"
+    },
+    {
+        "state": "Meghalaya",
+        "abbreviation": "ML"
+    },
+    {
+        "state": "Mizoram",
+        "abbreviation": "MZ"
+    },
+    {
+        "state": "Nagaland",
+        "abbreviation": "NL"
+    },
+    {
+        "state": "Odisha",
+        "abbreviation": "OR"
+    },
+    {
+        "state": "Puducherry",
+        "abbreviation": "PY"
+    },
+    {
+        "state": "Punjab",
+        "abbreviation": "PB"
+    },
+    {
+        "state": "Rajasthan",
+        "abbreviation": "RJ"
+    },
+    {
+        "state": "Sikkim",
+        "abbreviation": "SK"
+    },
+    {
+        "state": "Tamil Nadu",
+        "abbreviation": "TN"
+    },
+    {
+        "state": "Telangana",
+        "abbreviation": "TG"
+    },
+    {
+        "state": "Tripura",
+        "abbreviation": "TR"
+    },
+    {
+        "state": "Uttar Pradesh",
+        "abbreviation": "UP"
+    },
+    {
+        "state": "Uttarakhand",
+        "abbreviation": "UT"
+    },
+    {
+        "state": "West Bengal",
+        "abbreviation": "WB"
+    }
+]
