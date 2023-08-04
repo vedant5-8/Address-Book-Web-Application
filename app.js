@@ -1,6 +1,5 @@
 const strRegex = /^[a-zA-Z\s]*$/;
 const emailRegex = /^[0-9a-zA-Z]+[+._-]{0,1}[0-9a-zA-Z]+[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$/;
-
 const phoneRegex = /^((\+91)|91|0)?[789][0-9]{9}$/;
 const digitRegex = /^\d+$/;
 const postalCodeRegex = /^[1-9][0-9]{2}[ ]?[0-9]{3}$/;
@@ -14,15 +13,77 @@ const addBtn = document.getElementById('add-btn');
 const closeBtn = document.getElementById('close-btn');
 const modalBtns = document.getElementById('modal-btns');
 const form = document.getElementById('modal');
-const addressBookList = document.getElementById('#addr-book-list tbody');
+const addressBookList = document.querySelector('#addr-book-list tbody');
 
 // ___________________________________________________________________________ //
 
 let firstName = lastName = email = phone = streetAddr = postCode = city = state = labels = "";
 
+// Address class
+
+class Address {
+    constructor(id, firstName, lastName, email, phone, streetAddr, postCode, city, state, labels) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.streetAddr = streetAddr;
+        this.postCode = postCode;
+        this.city = city;
+        this.state = state;
+        this.labels = labels;
+    }
+
+    // This function returns the value of the ‘addresses’ key from the local storage as an array of objects. 
+    // If the key does not exist or the value is not a valid JSON string, it returns an empty array.
+    static getAddresses() {
+        let addresses;
+
+        if(localStorage.getItem('addresses') == null) {
+            addresses = [];
+        }
+        else {
+            addresses = JSON.parse(localStorage.getItem('addresses'));
+        }
+        return addresses;
+    }
+
+    // Add address to local storage
+    static addAddress(address) {
+        const addresses = Address.getAddresses();
+        addresses.push(address);
+        localStorage.setItem('addresses', JSON.stringify(addresses));
+    }
+
+}
+
 // UI class
 
 class UI {
+
+    static showAddressList() {
+        const addresses = Address.getAddresses();
+        addresses.forEach(address => UI.addToAddressList(address));
+    }
+
+    static addToAddressList(address) {
+        const tableRow = document.createElement('tr');
+        tableRow.setAttribute('data-id', address.id);
+        tableRow.innerHTML = `
+            <td>${address.id}</td>
+            <td>
+                <span class="address">${address.streetAddr + ", "} ${address.city + ", "} ${address.state + ", "} ${address.postCode}</span>
+            </td>
+            <td>
+                <span>${address.labels}</span>
+            </td>
+            <td>${address.firstName + " " + address.lastName}</td>
+            <td>${address.phone}</td>
+        `;
+        addressBookList.appendChild(tableRow);
+    }
+
     static showModal() {
         modal.style.display = "block";
         fullScreenDiv.style.display = "block";
@@ -39,6 +100,7 @@ class UI {
 window.addEventListener('DOMContentLoaded', () => {
     loadJSON();
     eventListeners();
+    UI.showAddressList();
 });
 
 // event listeners
@@ -72,7 +134,13 @@ function eventListeners() {
                 });
             }
             else {
-                // let allItems = 
+                let allItems = Address.getAddresses();
+                let lastItemId = (allItems.length > 0) ? allItems[allItems.length - 1].id : 0;
+                lastItemId++;
+
+                const addressItem = new Address(lastItemId, firstName, lastName, email, phone, streetAddr, postCode, city, state, labels);
+                Address.addAddress(addressItem);
+                UI.closeModal();
             }
         }
     });
