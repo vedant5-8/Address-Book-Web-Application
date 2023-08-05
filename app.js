@@ -70,6 +70,26 @@ class Address {
         UI.showAddressList();
     }
 
+    static updateAddress(item) {
+        const addresses = Address.getAddresses();
+        addresses.forEach(address => {
+            if(address.id == item.id) {
+                address.firstName = item.firstName;
+                address.lastName = item.lastName;
+                address.email = item.email;
+                address.phone = item.phone;
+                address.streetAddr = item.streetAddr;
+                address.postCode = item.postCode;
+                address.city = item.city;
+                address.state = item.state;
+                address.labels = item.labels;
+            }
+        });
+        localStorage.setItem('addresses', JSON.stringify(addresses));
+        addressBookList.innerHTML = "";
+        UI.showAddressList();
+    }
+
 }
 
 // UI class
@@ -199,6 +219,28 @@ function eventListeners() {
     modalBtns.addEventListener('click', (event) => {
         if (event.target.id == 'delete-btn') {
             Address.deleteAddress(event.target.dataset.id);
+        }
+    });
+
+    // Update an address item
+
+    modal.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (event.target.id == 'update-btn') {
+            let id = event.target.dataset.id;
+            let isFormValid = getFormData();
+            if (!isFormValid) {
+                form.querySelectorAll('input').forEach(input => {
+                    setTimeout(() => {
+                        input.classList.remove('errorMsg');
+                    }, 1500);
+                });
+            } else {
+                const addressItem = new Address(id, firstName, lastName, email, phone, streetAddr, postCode, city, state, labels);
+                Address.updateAddress(addressItem);
+                UI.closeModal();
+                form.reset();
+            }
         }
     });
 
