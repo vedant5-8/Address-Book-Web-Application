@@ -56,6 +56,20 @@ class Address {
         localStorage.setItem('addresses', JSON.stringify(addresses));
     }
 
+    static deleteAddress(id) {
+        const addresses = Address.getAddresses();
+        addresses.forEach((address, index) => {
+            if(address.id == id) {
+                addresses.splice(index, 1);
+            }
+        });
+        localStorage.setItem('addresses', JSON.stringify(addresses));
+        form.reset();
+        UI.closeModal();
+        addressBookList.innerHTML = "";
+        UI.showAddressList();
+    }
+
 }
 
 // UI class
@@ -84,6 +98,29 @@ class UI {
         addressBookList.appendChild(tableRow);
     }
 
+    static showModalData(id) {
+        const addresses = Address.getAddresses();
+        addresses.forEach(address => {
+            if(address.id == id) {
+                form.first_name.value = address.firstName;
+                form.last_name.value = address.lastName;
+                form.email.value = address.email;
+                form.phone.value = address.phone;
+                form.street_addr.value = address.streetAddr;
+                form.postal_code.value = address.postCode;
+                form.city.value = address.city;
+                form.state.value = address.state;
+                form.labels.value = address.labels;
+                document.getElementById('modal-title').innerHTML = "Change Address Details";
+
+                document.getElementById('modal-btns').innerHTML = `
+                    <button type="submit" id="update-btn" data-id="${id}">Update</button>
+                    <button type="button" id="delete-btn" data-id="${id}">Delete</button>
+                `;
+            }
+        });
+    }
+
     static showModal() {
         modal.style.display = "block";
         fullScreenDiv.style.display = "block";
@@ -96,7 +133,6 @@ class UI {
 }
 
 // dom content loaded
-
 window.addEventListener('DOMContentLoaded', () => {
     loadJSON();
     eventListeners();
@@ -104,7 +140,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // event listeners
-
 function eventListeners() {
     
     // show add address form modal
@@ -141,7 +176,29 @@ function eventListeners() {
                 const addressItem = new Address(lastItemId, firstName, lastName, email, phone, streetAddr, postCode, city, state, labels);
                 Address.addAddress(addressItem);
                 UI.closeModal();
+                UI.addToAddressList(addressItem);
+                form.reset();
             }
+        }
+    });
+
+    addressBookList.addEventListener('click', (event) => {
+        UI.showModal();
+        let trElement;
+        if(event.target.parentElement.tagName = "TD") {
+            trElement = event.target.parentElement.parentElement;
+        }
+        if(event.target.parentElement.tagName == "TR") {
+            trElement = event.target.parentElement;
+        }
+        let viewID = trElement.dataset.id;
+        UI.showModalData(viewID);
+    });
+
+    // delete an address item
+    modalBtns.addEventListener('click', (event) => {
+        if (event.target.id == 'delete-btn') {
+            Address.deleteAddress(event.target.dataset.id);
         }
     });
 
